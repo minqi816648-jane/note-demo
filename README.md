@@ -1,6 +1,6 @@
 <div align="center">
 
-# note-demo · 问墨
+# note· 问墨
 
 **AI 智能笔记助手 —— 把「记录」和「整理」交给一句话**
 
