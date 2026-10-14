@@ -1,0 +1,8 @@
+{
+  "name": "screen-capture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local Expo module: single-frame screen capture via MediaProjection (Android only).",
+  "main": "index.ts",
+  "files": ["index.ts", "expo-module.config.json", "android"]
+}

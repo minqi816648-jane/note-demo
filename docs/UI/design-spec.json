@@ -1,0 +1,89 @@
+{
+  "schema": "note-demo design system v1.0",
+  "updated": "2026-08-10",
+  "description": "全项目视觉设计与应用规范 — 供优化/迭代参考的单一事实来源（机器可读版）",
+  "language": {
+    "day": { "name": "水墨 SUMI", "metaphor": ["水墨", "题跋", "印章", "砚台"] },
+    "night": { "name": "极光 AURORA", "metaphor": ["深空", "玻璃拟态", "极光渐变"], "note": "朱砂印章夜间保留作品牌符号" }
+  },
+  "color": {
+    "day": {
+      "pbg": "#F6F1E6", "card": "#FFFDF7", "pfg": "#1C1B18", "acc": "#B83A2A",
+      "mut": "#8A8272", "line": "#E5DCC8", "line2": "#E2D9C4", "gold": "#E8C56A",
+      "cardBorder": "#CDC4AE", "pillTxt": "#5A5548", "scardTxt": "#6E685A",
+      "scardMeta": "#A19A87", "scardTag": "#B0A992", "sbarIc": "#2A2722",
+      "tabBg": "rgba(246,241,230,.92)"
+    },
+    "night": {
+      "pbg": "#0A0D1F", "card": "rgba(255,255,255,.07)", "pfg": "#F2F4FF",
+      "acc": "#FF7AD9", "mut": "#7F89B4", "line": "rgba(255,255,255,.14)",
+      "line2": "rgba(255,255,255,.10)", "gold": "#D9B76A",
+      "grd": "linear-gradient(120deg,#4FD8EB,#8B7CFF 55%,#FF7AD9)",
+      "accentRead": "#8FE7F5", "sbarIc": "#E9EDFB", "tabBg": "rgba(10,13,31,.55)"
+    },
+    "mapping": {
+      "宣纸白": "深空黑+极光光斑", "实色卡": "玻璃卡backdrop-blur",
+      "焦墨文字": "雾白", "朱砂强调": "极光渐变（印章除外保留朱砂）",
+      "描金": "暖金光晕(降饱和)", "墨晕入场": "玻璃弹性入场", "研墨loader": "青色光环呼吸"
+    }
+  },
+  "typography": {
+    "fontSerif": "Noto Serif SC", "fontSans": "Noto Sans SC",
+    "fontSeal": "Ma Shan Zheng", "fontNumNight": "Unbounded",
+    "weights": { "black": 900, "bold": 700, "medium": 500, "regular": 400 },
+    "scale": {
+      "hero": "clamp(36px,5.4vw,64px)", "h2": "25px", "cardTitle": "11.5px",
+      "dayHeader": "12px", "pill": "11.5px", "body": "11px",
+      "abstract": "9px", "meta": "8px", "nsub": "9.5px"
+    }
+  },
+  "radius": {
+    "page": 20, "card": 13, "cardLg": 16, "icon": 8, "seal": 7,
+    "fab": 14, "pill": 999, "tag": 99, "phone": 46, "sheet": 24
+  },
+  "spacing": { "base": 4, "gutter": 18, "cardGap": 9 },
+  "shadow": {
+    "card": "0 6px 16px -10px rgba(28,27,24,.28)",
+    "focus": "0 8px 20px -12px rgba(28,27,24,.3)",
+    "fab": "0 8px 16px -6px rgba(28,27,24,.5)",
+    "sealDay": "2.5px 2.5px 0 rgba(184,58,42,.85)",
+    "sealNight": "2.5px 2.5px 0 rgba(0,0,0,.5)"
+  },
+  "motion": {
+    "durations": { "fast": "150ms", "normal": "300ms", "slow": "500ms" },
+    "keyframes": ["sealPulse", "inkIn", "eq", "ringp", "drift", "bIn"],
+    "reducedMotion": "respect prefers-reduced-motion, degrade to static"
+  },
+  "layout": {
+    "phoneFrame": { "width": 352, "height": 726, "radius": 46, "notch": { "w": 88, "h": 22 } },
+    "pageSkeleton": ["状态栏", "头部区域", "分类筛选+排序", "内容区(每日长卷)", "底部导航TabBar"],
+    "fixedConstraint": "状态栏与TabBar吸顶/吸底固定；中层纵向滚动、长卷内横向滑动"
+  },
+  "iconography": {
+    "source": "note-demo-icons.svg",
+    "count": 43,
+    "grid": 24, "strokeWidth": 1.75, "linecap": "round", "linejoin": "round",
+    "fill": "none", "filledException": "i-more(fill:currentColor)",
+    "theming": "stroke:currentColor, 由父级 color 换肤; 日#1C1B18 夜#F2F4FF, 强调朱砂/极光青",
+    "categories": {
+      "nav": 5, "action": 6, "view": 3, "category": 6, "media": 6, "edit": 3, "settings": 14
+    },
+    "exports": {
+      "sprite": "note-demo-icons.svg",
+      "json": "icons.json",
+      "react": "NoteIcon.tsx",
+      "singleSvg": "icons/",
+      "singlePng": "icons-png-2x/ (48x48, day/night)"
+    }
+  },
+  "components": [
+    { "name": "statusBar", "spec": "时间9:41 + 信号4格 + 电池, 高44" },
+    { "name": "header", "spec": "手帖(Serif900 25px)+印章记(25x25朱砂,#B83A2A)+副标题(9.5px/.26em 淡墨)+搜索钮+三段视图切换" },
+    { "name": "pills", "spec": "分类 全部/工作/学习/生活; 圆角999; 选中 实心+不规则圆角999/12/999/14" },
+    { "name": "sortDropdown", "spec": "排序 创建时间/标题; 右下浮层 128px 圆角12 卡底; 选中朱砂+实心圆点" },
+    { "name": "dailyScroll", "spec": "日题头(菱形节点7x7+日期+计数+更多)+横向scroll-snap卷卡组" },
+    { "name": "scard", "spec": "150x112 圆角13 左侧2.5px朱砂竖条(.55); 文字/语音声波/图片缩略48/链接未读4类" },
+    { "name": "tabbar", "spec": "五Tab 手帖/问墨/+/待办/设置; 毛玻璃 blur14; 中央+ 40x40 圆角14 凸起-24 光环动画" },
+    { "name": "emptyState", "spec": "4px圆点+文案'还没有笔记，点击下方 + 开始记录'" }
+  ]
+}

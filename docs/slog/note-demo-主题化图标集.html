@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="day">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>note-demo · 主题化图标集（水墨 / 极光）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pbg:#F6F1E6; --card:#FFFDF7; --pfg:#1C1B18; --acc:#B83A2A; --mut:#8A8272;
+  --line:#E5DCC8; --gold:#E8C56A; --ink:#1C1B18; --thumb-bg:#ECE6D8;
+  --stroke:#1C1B18; --accent-stroke:#B83A2A; --muted:#A19A87;
+  --code-bg:#EFE9DB; --chip:#F0EBDD;
+}
+[data-theme="night"]{
+  --pbg:#0A0D1F; --card:rgba(255,255,255,.06); --pfg:#F2F4FF; --mut:#7F89B4;
+  --line:rgba(255,255,255,.14); --gold:#D9B76A; --thumb-bg:rgba(255,255,255,.03);
+  --stroke:#F2F4FF; --accent-stroke:#8FE7F5; --muted:#5D6890;
+  --code-bg:rgba(255,255,255,.05); --chip:rgba(255,255,255,.05);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--pbg);color:var(--pfg);
+  -webkit-font-smoothing:antialiased;transition:.4s;min-height:100vh;padding:38px 28px 70px}
+body::before,body::after{content:"";position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;
+  opacity:0;transition:.6s;z-index:0}
+body::before{width:420px;height:420px;left:-130px;top:-90px;background:#4FD8EB}
+body::after{width:400px;height:400px;right:-110px;bottom:-70px;background:#8B7CFF}
+[data-theme="night"] body::before,[data-theme="night"] body::after{opacity:.15}
+
+.wrap{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+
+/* 页头 */
+.top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:10px}
+h1{font-family:'Noto Serif SC',serif;font-weight:900;font-size:26px;letter-spacing:.04em}
+h1 .seal{display:inline-flex;width:30px;height:30px;background:#B83A2A;border-radius:8px;color:#fff;
+  font-family:'Ma Shan Zheng';font-size:17px;align-items:center;justify-content:center;transform:rotate(-4deg);
+  box-shadow:2px 2px 0 rgba(184,58,42,.22);margin-right:10px;vertical-align:-6px}
+.top .sub{font-size:11px;color:var(--mut);letter-spacing:.08em;margin-top:6px}
+.theme-switch{display:flex;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px;font-size:11.5px;font-weight:600;color:var(--mut)}
+.theme-switch label{cursor:pointer;padding:6px 16px;border-radius:99px;transition:.25s}
+.theme-switch input{display:none}
+.theme-switch input:checked+label{background:var(--pfg);color:var(--pbg)}
+
+/* 规范框 */
+.spec{margin:18px 0 12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;font-size:12px;line-height:1.9;color:var(--pfg)}
+.spec b{color:var(--acc)}[data-theme="night"] .spec b{color:#8FE7F5}
+.spec .row{display:flex;flex-wrap:wrap;gap:10px 26px}
+.spec .row i{font-style:normal}
+.spec .kv{font-size:11px;color:var(--mut);background:var(--chip);border-radius:8px;padding:2px 9px;display:inline-block;margin:2px 4px 0 0}
+.spec .t{font-family:'Noto Serif SC';font-weight:900;font-size:13px;margin-bottom:8px;letter-spacing:.05em}
+
+/* 分类 */
+.cat{margin-top:30px}
+.cat-h{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.cat-h .no{font-family:'Fraunces','Noto Serif SC';font-size:13px;font-weight:700;color:var(--acc);width:26px;height:26px;
+  border:1.5px solid var(--acc);border-radius:8px;display:grid;place-items:center}
+[data-theme="night"] .cat-h .no{color:#8FE7F5;border-color:#8FE7F5}
+.cat-h h2{font-family:'Noto Serif SC';font-size:17px;font-weight:900;letter-spacing:.05em}
+.cat-h .desc{font-size:10.5px;color:var(--mut);margin-left:auto;letter-spacing:.03em}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 10px 12px;
+  display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer;transition:.22s;position:relative}
+.item:hover{transform:translateY(-3px);box-shadow:0 8px 20px -12px rgba(28,27,24,.3);border-color:var(--acc)}
+[data-theme="night"] .item:hover{border-color:rgba(143,231,245,.4)}
+.item .ic{width:44px;height:44px;border-radius:11px;background:var(--thumb-bg);display:grid;place-items:center;transition:.2s}
+.item:hover .ic{background:rgba(184,58,42,.08)}[data-theme="night"] .item:hover .ic{background:rgba(143,231,245,.10)}
+.item .i{width:24px;height:24px}
+.item .nm{font-size:11px;font-weight:600;color:var(--pfg)}
+.item .id{font-size:8.5px;color:var(--muted);font-family:monospace;letter-spacing:.02em}
+.item .tag{position:absolute;top:8px;right:8px;font-size:7.5px;color:var(--acc);border:1px solid var(--acc);
+  border-radius:5px;padding:0 5px;line-height:1.6;opacity:0;transition:.2s}
+[data-theme="night"] .item .tag{color:#8FE7F5;border-color:#8FE7F5}
+.item:hover .tag{opacity:1}
+.item .tag.ess{opacity:1}
+
+/* 弹层 */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);z-index:50;
+  display:none;align-items:center;justify-content:center;padding:20px}
+.overlay.show{display:flex}
+.modal{background:var(--pbg);border:1px solid var(--line);border-radius:18px;padding:24px;max-width:560px;width:100%;
+  max-height:84vh;overflow:auto;box-shadow:0 24px 60px -20px rgba(0,0,0,.5)}
+.modal .m-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.modal .big-icon{width:64px;height:64px;background:var(--thumb-bg);border-radius:16px;display:grid;place-items:center;flex-shrink:0}
+.modal .big-icon .i{width:34px;height:34px}
+.modal .m-t h4{font-family:'Noto Serif SC';font-size:18px;font-weight:900}
+.modal .m-t .id{font-family:monospace;font-size:11px;color:var(--acc);margin-top:3px}[data-theme="night"] .modal .m-t .id{color:#8FE7F5}
+.modal .m-t .use{font-size:10.5px;color:var(--mut);margin-top:4px}
+.modal .code{background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;
+  font-family:monospace;font-size:11px;line-height:1.7;white-space:pre-wrap;word-break:break-all;margin:14px 0}
+.modal .act{display:flex;gap:10px;justify-content:flex-end}
+.btn{font-size:12px;font-weight:600;border-radius:99px;padding:8px 18px;cursor:pointer;border:1px solid var(--line);
+  background:var(--card);color:var(--pfg);transition:.2s}
+.btn.copy{background:var(--pfg);color:var(--pbg);border-color:var(--pfg)}
+[data-theme="night"] .btn.copy{background:linear-gradient(120deg,#4FD8EB,#8B7CFF 55%,#FF7AD9);border-color:transparent}
+.btn:hover{transform:translateY(-1px)}
+.tip{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:var(--pfg);color:var(--pbg);
+  padding:9px 20px;border-radius:99px;font-size:12px;z-index:60;opacity:0;transition:.3s;pointer-events:none}
+.tip.show{opacity:1}
+
+.i{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;display:block}
+</style>
+</head>
+<body>
+
+<!-- ============ 图标集 Sprite（可整体复制到项目） ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M6 3.5h9.5L19 7v13.5H6z"/><path d="M15 3.5V7h4"/><path d="M9 11.5h6M9 15h6M9 8h3"/></symbol>
+  <symbol id="i-ai" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
+  <symbol id="i-todo" viewBox="0 0 24 24"><path d="M4 6.5h3M4 12h3M4 17.5h3"/><path d="M10.5 6.5H20M10.5 12H20"/><path d="M10.5 17.5H16"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path d="M4 8h10M18 8h2M4 16h2M10 16h10"/><circle cx="16" cy="8" r="2.1"/><circle cx="8" cy="16" r="2.1"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16.4 16.4l4 4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 2.8v4M16 2.8v4"/><path d="M7.5 13.5h1M11.5 13.5h1M15.5 13.5h1"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.8"/><rect x="13" y="4" width="7" height="7" rx="1.8"/><rect x="4" y="13" width="7" height="7" rx="1.8"/><rect x="13" y="13" width="7" height="7" rx="1.8"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24"><rect x="3.8" y="5" width="16.4" height="14" rx="2.4"/><circle cx="9" cy="10" r="1.7"/><path d="M5.5 16.5l4.2-4 3.2 3 3-2.4 2.6 3.4"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14.5l4-4"/><path d="M8.5 12l-2.5 2.5a3.5 3.5 0 0 0 5 5L13 17.5M15.5 12l2.5-2.5a3.5 3.5 0 0 0-5-5L11 6.5"/></symbol>
+  <symbol id="i-sort" viewBox="0 0 24 24"><path d="M4 7h10M4 12h7M4 17h5"/><path d="M15 9l3-3 3 3M18 6v12"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18.5v3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.5 5.2 5.7.7-4.2 4 1.1 5.7L12 16.3l-5.1 2.8 1.1-5.7-4.2-4 5.7-.7z"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24"><path d="M4 20c.5-3 1.5-4.5 3-6L16.5 4.5a2.1 2.1 0 0 1 3 3L10 17c-1.5 1.5-3 2.5-6 3z"/><path d="M14.5 6.5l3 3"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="M9 12.5l6.2-6.2a3.3 3.3 0 0 1 4.6 4.6l-8 8a5 5 0 0 1-7.1-7.1l8.5-8.5"/><path d="M9.2 12.5l4-4"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M14.5 5.5L8 12l6.5 6.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5L19.5 6.5"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 19V6M6.5 11.5L12 6l5.5 5.5"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><rect x="8" y="8" width="8" height="8" rx="1.8"/></symbol>
+  <symbol id="i-todoadd" viewBox="0 0 24 24"><path d="M9.5 5.5L11 7l3-3M4 12h4M4 18h4"/><path d="M11 12h9M11 18h9"/></symbol>
+  <!-- ===== 分类 / 标签 ===== -->
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3.5" y="7" width="17" height="12.5" rx="2.5"/><path d="M9 7V5.8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2V7"/><path d="M3.5 12.5h17"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.2A2.2 2.2 0 0 1 6.2 3H12v15.5H6.2A2.2 2.2 0 0 0 4 20.7z"/><path d="M20 5.2A2.2 2.2 0 0 0 17.8 3H12v15.5h5.8A2.2 2.2 0 0 1 20 20.7z"/><path d="M12 3v15.5"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.8.6 1.6 1.4 1.6 2.2h4c0-.8.8-1.6 1.6-2.2A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 7a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 3.5v6.9l9.3 9.3a2 2 0 0 0 2.8 0l4.1-4.1a2 2 0 0 0 0-2.8l-9.3-9.3z"/><circle cx="7.5" cy="7.5" r="1.4"/></symbol>
+  <!-- ===== 视图 ===== -->
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8.5 6H20M8.5 12H20M8.5 18H20"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <!-- ===== 设置页 ===== -->
+  <symbol id="i-theme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.3 3.8 5 3.8 8.5s-1.3 6.2-3.8 8.5c-2.5-2.3-3.8-5-3.8-8.5s1.3-6.2 3.8-8.5z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16.5v-5a6 6 0 0 1 12 0v5l1.5 2.5h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.7"/><path d="M4.5 5.5v7c0 1.5 3.4 2.7 7.5 2.7s7.5-1.2 7.5-2.7v-7"/><path d="M4.5 12.5v4c0 1.5 3.4 2.7 7.5 2.7s7.5-1.2 7.5-2.7v-4"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-13.7 5.6L4 12"/><path d="M4 12a8 8 0 0 1 13.7-5.6L20 12"/><path d="M4 8v4h4M20 16v-4h-4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V5.5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1V7"/><path d="M6.5 7l.8 12a2 2 0 0 0 2 1.9h5.4a2 2 0 0 0 2-1.9l.8-12"/><path d="M10 11v6M14 11v6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v10M7.5 10.5L12 15l4.5-4.5"/><path d="M5 19.5h14"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.2a2.5 2.5 0 0 1 4.8 1c0 1.6-2.3 2-2.3 3.3"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M14 4.5H7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h7"/><path d="M11 12h9M16.5 8.5L20 12l-3.5 3.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><path d="M12 14.5v2"/></symbol>
+  <symbol id="i-font" viewBox="0 0 24 24"><path d="M4 18.5L10 5.5l6 13M7 13h6"/><path d="M16.5 11.5h3M18 10v8"/></symbol>
+</svg>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1><span class="seal">记</span>主题化图标集<span style="font-size:13px;color:var(--mut);font-weight:500">&nbsp;·&nbsp;note-demo</span></h1>
+      <div class="sub">ICON SET · SUMI 水墨 / AURORA 极光 · 统一描边线性图标 · 全量图标库</div>
+    </div>
+    <div class="theme-switch">
+      <input type="radio" name="t" id="d" checked><label for="d">日间 · 水墨</label>
+      <input type="radio" name="t" id="n"><label for="n">夜间 · 极光</label>
+    </div>
+  </div>
+
+  <div class="spec">
+    <div class="t">统一设计规范 · DESIGN SPEC</div>
+    <div class="row">
+      <i><b>网格</b><span class="kv">24 × 24</span></i>
+      <i><b>描边</b><span class="kv">1.75px 线性 stroke</span></i>
+      <i><b>端帽</b><span class="kv">round linecap / linejoin</span></i>
+      <i><b>配色</b><span class="kv">日 焦墨 #1C1B18 | 夜 雾白 #F2F4FF</span></i>
+      <i><b>强调</b><span class="kv">朱砂 #B83A2A</span> <span class="kv">夜 极光青 #8FE7F5</span></i>
+      <i><b>填充型</b><span class="kv">more(···) 用 currentColor 实心</span></i>
+    </div>
+  </div>
+
+  <div id="app"></div>
+</div>
+
+<div class="overlay" id="ovl"></div>
+<div class="tip" id="tip">已复制到剪贴板</div>
+
+<script>
+var html=document.documentElement;
+document.querySelectorAll('.theme-switch input').forEach(function(r){
+  r.addEventListener('change',function(){html.setAttribute('data-theme',this.value==='n'?'night':'day')});
+});
+
+/* 图标注册表：id | 名称 | 分类 | 用途 */
+var ICONS=[
+  // —— 一级：底部导航 / 全局 ——
+  {i:'i-note',  n:'手帖',   c:'nav',   u:'底部导航·笔记列表（首页）', ess:1},
+  {i:'i-ai',    n:'问墨',   c:'nav',   u:'底部导航·AI对话 / AI 浮钮', ess:1},
+  {i:'i-plus',  n:'加号',   c:'nav',   u:'底部导航中央「+」创作入口', ess:1},
+  {i:'i-todo',  n:'待办',   c:'nav',   u:'底部导航·任务管理', ess:1},
+  {i:'i-gear',  n:'设置',   c:'nav',   u:'底部导航·设置', ess:1},
+
+  // —— 二级：内容操作（列表页工具栏 / 通用操作） ——
+  {i:'i-search',n:'搜索',   c:'tool',  u:'头部搜索钮 / 全局搜索', ess:1},
+  {i:'i-sort',  n:'排序',   c:'tool',  u:'分类行右侧·排序下拉', ess:1},
+  {i:'i-left',  n:'返回',   c:'tool',  u:'二级页返回（详情/编辑器/设置）'},
+  {i:'i-close', n:'关闭',   c:'tool',  u:'关闭浮层 / 取消'},
+  {i:'i-more',  n:'更多',   c:'tool',  u:'「···」更多菜单 / 溢出操作', ess:1},
+  {i:'i-check', n:'勾选',   c:'tool',  u:'完成 / 选中 / 成功反馈'},
+
+  // —— 二级：视图切换（列表/日历/图库） ——
+  {i:'i-list',  n:'列表',   c:'view',  u:'视图切换·列表视图（默认）', ess:1},
+  {i:'i-cal',   n:'日历',   c:'view',  u:'视图切换·日历视图 / 日历页'},
+  {i:'i-grid',  n:'图库',   c:'view',  u:'视图切换·图库(网格) / 图库页'},
+
+  // —— 三级：分类 / 标签（组织维度） ——
+  {i:'i-briefcase',n:'工作', c:'cat',  u:'分类·工作（公文包）'},
+  {i:'i-book', n:'学习',    c:'cat',  u:'分类·学习（书卷）'},
+  {i:'i-house',n:'生活',    c:'cat',  u:'分类·生活（屋舍）'},
+  {i:'i-bulb', n:'想法',    c:'cat',  u:'分类·想法/灵感（明灯）'},
+  {i:'i-folder',n:'文件夹', c:'cat',  u:'组织维度·文件夹'},
+  {i:'i-tag',  n:'标签',    c:'cat',  u:'组织维度·标签'},
+
+  // —— 三级：多媒体 / 编辑器 ——
+  {i:'i-mic',   n:'录音',   c:'media', u:'语音笔记 / 编辑器录音 / 创作浮层'},
+  {i:'i-img',   n:'图片',   c:'media', u:'图片笔记 / 编辑器插图 / 缩略图'},
+  {i:'i-link',  n:'链接',   c:'media', u:'链接笔记 / 编辑器插入外部链接'},
+  {i:'i-clip',  n:'附件',   c:'media', u:'附件·回形针（本地文件上传）'},
+  {i:'i-star',  n:'收藏',   c:'media', u:'收藏 / 星标标记'},
+  {i:'i-brush', n:'印章',   c:'media', u:'印章创作 / 书法标记'},
+
+  // —— 三级：编辑器段落 / 状态 ——
+  {i:'i-send',  n:'发送',   c:'edit',  u:'AI 对话发送'},
+  {i:'i-stop',  n:'停止',   c:'edit',  u:'录音终止 / 播放停止'},
+  {i:'i-todoadd',n:'待办添加',c:'edit',u:'待办页·新建条目'},
+
+  // —— 四级：设置页 ——
+  {i:'i-theme',  n:'外观',  c:'set',  u:'设置·外观/主题', ess:1},
+  {i:'i-font',   n:'字体',  c:'set',  u:'设置·编辑器/默认字体'},
+  {i:'i-shield', n:'隐私',  c:'set',  u:'设置·隐私/安全', ess:1},
+  {i:'i-lock',   n:'锁定',  c:'set',  u:'设置·应用锁/加密'},
+  {i:'i-globe',  n:'语言',  c:'set',  u:'设置·语言'},
+  {i:'i-bell',   n:'通知',  c:'set',  u:'设置·通知/提醒'},
+  {i:'i-database',n:'存储', c:'set',  u:'设置·数据/存储占用'},
+  {i:'i-sync',   n:'同步',  c:'set',  u:'设置·云同步'},
+  {i:'i-user',   n:'账户',  c:'set',  u:'设置·账号资料'},
+  {i:'i-trash',  n:'清除',  c:'set',  u:'设置·清除缓存/回收站'},
+  {i:'i-download',n:'备份', c:'set',  u:'设置·导出/备份'},
+  {i:'i-info',   n:'关于',  c:'set',  u:'设置·关于'},
+  {i:'i-help',   n:'帮助',  c:'set',  u:'设置·帮助与反馈'},
+  {i:'i-logout', n:'退出',  c:'set',  u:'设置·退出登录'},
+];
+
+var CATS=[
+  {k:'nav',  t:'一级 · 底部导航',  d:'BOTTOM NAV · 全局骨架'},
+  {k:'tool', t:'二级 · 内容操作',  d:'HEADER + ACTION'},
+  {k:'view', t:'二级 · 视图切换',  d:'LIST / CAL / GALLERY'},
+  {k:'cat',  t:'三级 · 分类与标签',d:'CATEGORY · TAG'},
+  {k:'media',t:'三级 · 多媒体',    d:'MEDIA INSERT'},
+  {k:'edit', t:'三级 · 编辑状态',  d:'EDITOR STATE'},
+  {k:'set',  t:'四级 · 设置页',    d:'SETTINGS PANEL'},
+];
+
+var counts={};
+ICONS.forEach(function(x){counts[x.c]=(counts[x.c]||0)+1});
+
+// 构建分类 → 展示
+var app=document.getElementById('app');
+var order={};
+CATS.forEach(function(c){order[c.k]=c});
+var sorted=[];
+ICONS.forEach(function(x){if(!sorted[x.c])sorted[x.c]=[];sorted[x.c].push(x)});
+
+CATS.forEach(function(cat){
+  var items=sorted[cat.k]||[];
+  if(!items.length)return;
+  var sec=document.createElement('section');
+  sec.className='cat';
+  sec.innerHTML='<div class="cat-h"><span class="no">'+(cat.t.slice(0,1))+'</span><h2>'+cat.t+'</h2>'+
+    '<span class="desc">'+cat.d+' · '+items.length+' 枚</span></div>'+
+    '<div class="grid"></div>';
+  var grid=sec.querySelector('.grid');
+  items.forEach(function(it){
+    var tag=it.ess?'<span class="tag ess">核心</span>':'<span class="tag">复用</span>';
+    var el=document.createElement('div');
+    el.className='item';
+    el.innerHTML='<div class="ic"><svg class="i"><use href="#'+it.i+'"/></svg></div>'+
+      '<div class="nm">'+it.n+'</div><div class="id">'+it.i+'</div>'+tag;
+    el.addEventListener('click',function(){openModal(it)});
+    grid.appendChild(el);
+  });
+  app.appendChild(sec);
+});
+
+/* 弹层：展示大图标 + SVG 定义 + 复制 */
+var ovl=document.getElementById('ovl');
+var svgCodeCache={};
+function openModal(it){
+  var s=document.getElementById(it.i);
+  var inner=s?s.innerHTML.replace(/\/>/g,' />'):'';
+  var code='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">\n  '+inner+'\n</svg>';
+  ovl.innerHTML='<div class="modal">'+
+    '<div class="m-head"><div class="big-icon"><svg class="i"><use href="#'+it.i+'"/></svg></div>'+
+    '<div class="m-t"><h4>'+it.n+'</h4><div class="id">'+it.i+'</div><div class="use">'+it.u+'</div></div></div>'+
+    '<div style="font-size:10.5px;color:var(--mut);margin-bottom:4px">SVG 定义（可直接复制）</div>'+
+    '<div class="code" id="codeBox">'+code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div>'+
+    '<div class="act"><button class="btn" onclick="closeModal()">关闭</button>'+
+    '<button class="btn copy" onclick="copyCode()">复制 SVG</button></div></div>';
+  ovl.classList.add('show');
+  ovl.__code=code;
+}
+function closeModal(){ovl.classList.remove('show')}
+function copyCode(){
+  navigator.clipboard.writeText(ovl.__code).then(function(){tip()});
+}
+function tip(){var t=document.getElementById('tip');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1600)}
+ovl.addEventListener('click',function(e){if(e.target===ovl)closeModal()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>

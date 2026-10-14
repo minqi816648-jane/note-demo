@@ -1,0 +1,68 @@
+{
+  "expo": {
+    "name": "note-demo",
+    "slug": "note-demo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "note-demo",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "需要访问相册以插入图片到笔记",
+        "NSMicrophoneUsageDescription": "需要访问麦克风以录制语音笔记",
+        "NSSpeechRecognitionUsageDescription": "需要语音识别以转写语音笔记",
+        "NSUserNotificationUsageDescription": "需要发送待办事项提醒通知"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "allowBackup": false,
+      "permissions": [
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"
+      ],
+      "package": "com.anonymous.notedemo"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-secure-store",
+      "expo-sharing",
+      "expo-web-browser",
+      "expo-image-picker",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "需要访问麦克风以录制语音笔记"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#4A90D9",
+          "icon": "./assets/icon.png"
+        }
+      ],
+      "@react-native-community/datetimepicker",
+      "./plugins/withNoteDemoNative"
+    ]
+  }
+}

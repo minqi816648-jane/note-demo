@@ -1,0 +1,376 @@
+{
+  "schema": "note-demo icon set v1",
+  "count": 43,
+  "designSpec": {
+    "grid": 24,
+    "strokeWidth": 1.75,
+    "fill": "none",
+    "linecap": "round",
+    "linejoin": "round",
+    "colors": {
+      "day": {
+        "ink": "#1C1B18",
+        "accent": "#B83A2A"
+      },
+      "night": {
+        "ink": "#F2F4FF",
+        "accent": "#8FE7F5"
+      }
+    }
+  },
+  "categories": {
+    "nav": "bottom-nav",
+    "tool": "action",
+    "view": "view-switch",
+    "cat": "category-tag",
+    "media": "media",
+    "edit": "editor-state",
+    "set": "settings"
+  },
+  "icons": [
+    {
+      "id": "i-note",
+      "name": "手帖",
+      "category": "nav",
+      "usage": "底部导航·笔记列表（首页）",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M6 3.5h9.5L19 7v13.5H6z\"/><path d=\"M15 3.5V7h4\"/><path d=\"M9 11.5h6M9 15h6M9 8h3\"/>"
+    },
+    {
+      "id": "i-ai",
+      "name": "问墨",
+      "category": "nav",
+      "usage": "底部导航·AI对话 / AI 浮钮",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z\"/><path d=\"M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z\"/>"
+    },
+    {
+      "id": "i-plus",
+      "name": "加号",
+      "category": "nav",
+      "usage": "底部导航中央「+」创作入口",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M12 5.5v13M5.5 12h13\"/>"
+    },
+    {
+      "id": "i-todo",
+      "name": "待办",
+      "category": "nav",
+      "usage": "底部导航·任务管理",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M4 6.5h3M4 12h3M4 17.5h3\"/><path d=\"M10.5 6.5H20M10.5 12H20\"/><path d=\"M10.5 17.5H16\"/>"
+    },
+    {
+      "id": "i-gear",
+      "name": "设置",
+      "category": "nav",
+      "usage": "底部导航·设置",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M4 8h10M18 8h2M4 16h2M10 16h10\"/><circle cx=\"16\" cy=\"8\" r=\"2.1\"/><circle cx=\"8\" cy=\"16\" r=\"2.1\"/>"
+    },
+    {
+      "id": "i-search",
+      "name": "搜索",
+      "category": "tool",
+      "usage": "头部搜索钮 / 全局搜索",
+      "viewBox": "0 0 24 24",
+      "body": "<circle cx=\"11\" cy=\"11\" r=\"6.5\"/><path d=\"M16.4 16.4l4 4\"/>"
+    },
+    {
+      "id": "i-cal",
+      "name": "日历",
+      "category": "view",
+      "usage": "视图切换·日历视图 / 日历页",
+      "viewBox": "0 0 24 24",
+      "body": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15\" rx=\"2.5\"/><path d=\"M3.5 9.5h17M8 2.8v4M16 2.8v4\"/><path d=\"M7.5 13.5h1M11.5 13.5h1M15.5 13.5h1\"/>"
+    },
+    {
+      "id": "i-grid",
+      "name": "图库",
+      "category": "view",
+      "usage": "视图切换·图库(网格) / 图库页",
+      "viewBox": "0 0 24 24",
+      "body": "<rect x=\"4\" y=\"4\" width=\"7\" height=\"7\" rx=\"1.8\"/><rect x=\"13\" y=\"4\" width=\"7\" height=\"7\" rx=\"1.8\"/><rect x=\"4\" y=\"13\" width=\"7\" height=\"7\" rx=\"1.8\"/><rect x=\"13\" y=\"13\" width=\"7\" height=\"7\" rx=\"1.8\"/>"
+    },
+    {
+      "id": "i-img",
+      "name": "图片",
+      "category": "media",
+      "usage": "图片笔记 / 编辑器插图 / 缩略图",
+      "viewBox": "0 0 24 24",
+      "body": "<rect x=\"3.8\" y=\"5\" width=\"16.4\" height=\"14\" rx=\"2.4\"/><circle cx=\"9\" cy=\"10\" r=\"1.7\"/><path d=\"M5.5 16.5l4.2-4 3.2 3 3-2.4 2.6 3.4\"/>"
+    },
+    {
+      "id": "i-link",
+      "name": "链接",
+      "category": "media",
+      "usage": "链接笔记 / 编辑器插入外部链接",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M10 14.5l4-4\"/><path d=\"M8.5 12l-2.5 2.5a3.5 3.5 0 0 0 5 5L13 17.5M15.5 12l2.5-2.5a3.5 3.5 0 0 0-5-5L11 6.5\"/>"
+    },
+    {
+      "id": "i-sort",
+      "name": "排序",
+      "category": "tool",
+      "usage": "分类行右侧·排序下拉",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M4 7h10M4 12h7M4 17h5\"/><path d=\"M15 9l3-3 3 3M18 6v12\"/>"
+    },
+    {
+      "id": "i-mic",
+      "name": "录音",
+      "category": "media",
+      "usage": "语音笔记 / 编辑器录音 / 创作浮层",
+      "viewBox": "0 0 24 24",
+      "body": "<rect x=\"9\" y=\"3\" width=\"6\" height=\"11\" rx=\"3\"/><path d=\"M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18.5v3\"/>"
+    },
+    {
+      "id": "i-star",
+      "name": "收藏",
+      "category": "media",
+      "usage": "收藏 / 星标标记",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M12 3.5l2.5 5.2 5.7.7-4.2 4 1.1 5.7L12 16.3l-5.1 2.8 1.1-5.7-4.2-4 5.7-.7z\"/>"
+    },
+    {
+      "id": "i-brush",
+      "name": "印章",
+      "category": "media",
+      "usage": "印章创作 / 书法标记",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M4 20c.5-3 1.5-4.5 3-6L16.5 4.5a2.1 2.1 0 0 1 3 3L10 17c-1.5 1.5-3 2.5-6 3z\"/><path d=\"M14.5 6.5l3 3\"/>"
+    },
+    {
+      "id": "i-clip",
+      "name": "附件",
+      "category": "media",
+      "usage": "附件·回形针（本地文件上传）",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M9 12.5l6.2-6.2a3.3 3.3 0 0 1 4.6 4.6l-8 8a5 5 0 0 1-7.1-7.1l8.5-8.5\"/><path d=\"M9.2 12.5l4-4\"/>"
+    },
+    {
+      "id": "i-more",
+      "name": "更多",
+      "category": "tool",
+      "usage": "「···」更多菜单 / 溢出操作",
+      "viewBox": "0 0 24 24",
+      "body": "<circle cx=\"5\" cy=\"12\" r=\"1.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12\" cy=\"12\" r=\"1.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"19\" cy=\"12\" r=\"1.6\" fill=\"currentColor\" stroke=\"none\"/>"
+    },
+    {
+      "id": "i-close",
+      "name": "关闭",
+      "category": "tool",
+      "usage": "关闭浮层 / 取消",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M6 6l12 12M18 6L6 18\"/>"
+    },
+    {
+      "id": "i-left",
+      "name": "返回",
+      "category": "tool",
+      "usage": "二级页返回（详情/编辑器/设置）",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M14.5 5.5L8 12l6.5 6.5\"/>"
+    },
+    {
+      "id": "i-check",
+      "name": "勾选",
+      "category": "tool",
+      "usage": "完成 / 选中 / 成功反馈",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M4.5 12.5l5 5L19.5 6.5\"/>"
+    },
+    {
+      "id": "i-send",
+      "name": "发送",
+      "category": "edit",
+      "usage": "AI 对话发送",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M12 19V6M6.5 11.5L12 6l5.5 5.5\"/>"
+    },
+    {
+      "id": "i-stop",
+      "name": "停止",
+      "category": "edit",
+      "usage": "录音终止 / 播放停止",
+      "viewBox": "0 0 24 24",
+      "body": "<rect x=\"8\" y=\"8\" width=\"8\" height=\"8\" rx=\"1.8\"/>"
+    },
+    {
+      "id": "i-todoadd",
+      "name": "待办添加",
+      "category": "edit",
+      "usage": "待办页·新建条目",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M9.5 5.5L11 7l3-3M4 12h4M4 18h4\"/><path d=\"M11 12h9M11 18h9\"/>"
+    },
+    {
+      "id": "i-briefcase",
+      "name": "工作",
+      "category": "cat",
+      "usage": "分类·工作（公文包）",
+      "viewBox": "0 0 24 24",
+      "body": "<rect x=\"3.5\" y=\"7\" width=\"17\" height=\"12.5\" rx=\"2.5\"/><path d=\"M9 7V5.8a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2V7\"/><path d=\"M3.5 12.5h17\"/>"
+    },
+    {
+      "id": "i-book",
+      "name": "学习",
+      "category": "cat",
+      "usage": "分类·学习（书卷）",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M4 5.2A2.2 2.2 0 0 1 6.2 3H12v15.5H6.2A2.2 2.2 0 0 0 4 20.7z\"/><path d=\"M20 5.2A2.2 2.2 0 0 0 17.8 3H12v15.5h5.8A2.2 2.2 0 0 1 20 20.7z\"/><path d=\"M12 3v15.5\"/>"
+    },
+    {
+      "id": "i-house",
+      "name": "生活",
+      "category": "cat",
+      "usage": "分类·生活（屋舍）",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M4 11l8-7 8 7\"/><path d=\"M6 9.5V20h12V9.5\"/><path d=\"M10 20v-5h4v5\"/>"
+    },
+    {
+      "id": "i-bulb",
+      "name": "想法",
+      "category": "cat",
+      "usage": "分类·想法/灵感（明灯）",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M9 18h6M10 21h4\"/><path d=\"M12 3a6 6 0 0 0-3.6 10.8c.8.6 1.6 1.4 1.6 2.2h4c0-.8.8-1.6 1.6-2.2A6 6 0 0 0 12 3z\"/>"
+    },
+    {
+      "id": "i-folder",
+      "name": "文件夹",
+      "category": "cat",
+      "usage": "组织维度·文件夹",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M3.5 7a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z\"/>"
+    },
+    {
+      "id": "i-tag",
+      "name": "标签",
+      "category": "cat",
+      "usage": "组织维度·标签",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M3.5 3.5v6.9l9.3 9.3a2 2 0 0 0 2.8 0l4.1-4.1a2 2 0 0 0 0-2.8l-9.3-9.3z\"/><circle cx=\"7.5\" cy=\"7.5\" r=\"1.4\"/>"
+    },
+    {
+      "id": "i-list",
+      "name": "列表",
+      "category": "view",
+      "usage": "视图切换·列表视图（默认）",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M8.5 6H20M8.5 12H20M8.5 18H20\"/><path d=\"M4 6h.01M4 12h.01M4 18h.01\"/>"
+    },
+    {
+      "id": "i-theme",
+      "name": "外观",
+      "category": "set",
+      "usage": "设置·外观/主题",
+      "viewBox": "0 0 24 24",
+      "body": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 3.5v17a8.5 8.5 0 0 0 0-17z\"/>"
+    },
+    {
+      "id": "i-shield",
+      "name": "隐私",
+      "category": "set",
+      "usage": "设置·隐私/安全",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z\"/><path d=\"M9 12l2 2 4-4\"/>"
+    },
+    {
+      "id": "i-globe",
+      "name": "语言",
+      "category": "set",
+      "usage": "设置·语言",
+      "viewBox": "0 0 24 24",
+      "body": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M3.5 12h17M12 3.5c2.5 2.3 3.8 5 3.8 8.5s-1.3 6.2-3.8 8.5c-2.5-2.3-3.8-5-3.8-8.5s1.3-6.2 3.8-8.5z\"/>"
+    },
+    {
+      "id": "i-bell",
+      "name": "通知",
+      "category": "set",
+      "usage": "设置·通知/提醒",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M6 16.5v-5a6 6 0 0 1 12 0v5l1.5 2.5h-15z\"/><path d=\"M10 20a2 2 0 0 0 4 0\"/>"
+    },
+    {
+      "id": "i-database",
+      "name": "存储",
+      "category": "set",
+      "usage": "设置·数据/存储占用",
+      "viewBox": "0 0 24 24",
+      "body": "<ellipse cx=\"12\" cy=\"5.5\" rx=\"7.5\" ry=\"2.7\"/><path d=\"M4.5 5.5v7c0 1.5 3.4 2.7 7.5 2.7s7.5-1.2 7.5-2.7v-7\"/><path d=\"M4.5 12.5v4c0 1.5 3.4 2.7 7.5 2.7s7.5-1.2 7.5-2.7v-4\"/>"
+    },
+    {
+      "id": "i-sync",
+      "name": "同步",
+      "category": "set",
+      "usage": "设置·云同步",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M20 12a8 8 0 0 1-13.7 5.6L4 12\"/><path d=\"M4 12a8 8 0 0 1 13.7-5.6L20 12\"/><path d=\"M4 8v4h4M20 16v-4h-4\"/>"
+    },
+    {
+      "id": "i-user",
+      "name": "账户",
+      "category": "set",
+      "usage": "设置·账号资料",
+      "viewBox": "0 0 24 24",
+      "body": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4.5 20a7.5 7.5 0 0 1 15 0\"/>"
+    },
+    {
+      "id": "i-info",
+      "name": "关于",
+      "category": "set",
+      "usage": "设置·关于",
+      "viewBox": "0 0 24 24",
+      "body": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5\"/><path d=\"M12 7.5h.01\"/>"
+    },
+    {
+      "id": "i-trash",
+      "name": "清除",
+      "category": "set",
+      "usage": "设置·清除缓存/回收站",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M5 7h14M10 7V5.5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1V7\"/><path d=\"M6.5 7l.8 12a2 2 0 0 0 2 1.9h5.4a2 2 0 0 0 2-1.9l.8-12\"/><path d=\"M10 11v6M14 11v6\"/>"
+    },
+    {
+      "id": "i-download",
+      "name": "备份",
+      "category": "set",
+      "usage": "设置·导出/备份",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M12 4v10M7.5 10.5L12 15l4.5-4.5\"/><path d=\"M5 19.5h14\"/>"
+    },
+    {
+      "id": "i-help",
+      "name": "帮助",
+      "category": "set",
+      "usage": "设置·帮助与反馈",
+      "viewBox": "0 0 24 24",
+      "body": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M9.5 9.2a2.5 2.5 0 0 1 4.8 1c0 1.6-2.3 2-2.3 3.3\"/><path d=\"M12 17h.01\"/>"
+    },
+    {
+      "id": "i-logout",
+      "name": "退出",
+      "category": "set",
+      "usage": "设置·退出登录",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M14 4.5H7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h7\"/><path d=\"M11 12h9M16.5 8.5L20 12l-3.5 3.5\"/>"
+    },
+    {
+      "id": "i-lock",
+      "name": "锁定",
+      "category": "set",
+      "usage": "设置·应用锁/加密",
+      "viewBox": "0 0 24 24",
+      "body": "<rect x=\"5\" y=\"10.5\" width=\"14\" height=\"9.5\" rx=\"2\"/><path d=\"M8 10.5V8a4 4 0 0 1 8 0v2.5\"/><path d=\"M12 14.5v2\"/>"
+    },
+    {
+      "id": "i-font",
+      "name": "字体",
+      "category": "set",
+      "usage": "设置·编辑器/默认字体",
+      "viewBox": "0 0 24 24",
+      "body": "<path d=\"M4 18.5L10 5.5l6 13M7 13h6\"/><path d=\"M16.5 11.5h3M18 10v8\"/>"
+    }
+  ]
+}
